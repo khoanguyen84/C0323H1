@@ -1,0 +1,30 @@
+.btn{
+    border: none;
+    background-color: white;
+    padding: 20px 40px;
+    background-color: green;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px gray;
+}
+.btn:hover{
+    background-color: darkgreen;
+    transform: scale(0.95);
+    color: orange;
+}
+
+input{
+    width: 200px;
+    padding: 5px;
+}
+
+input:focus{
+    border: none;
+    outline: none;
+    border-bottom: 1px dashed black;
+}
+
+#ckb:checked{
+    transform: scale(3);
+}
