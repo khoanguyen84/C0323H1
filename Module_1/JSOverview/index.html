@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Overview</title>
+</head>
+
+<body>
+    <!-- 
+        có 3 cách để nhúng mã js vào html
+        cách 1: inline - viết mã js trực tiếp vào trong event (sự kiện) của element
+        cách 2: internal - viết mã js vào trong cặp thẻ script, đặt cho nó 1 cái tên, sử dụng cái tên này
+            vào trong sự kiện
+        cách 3: external -  Viết mã js vào trong 1 file có phần mở rộng là .js. Kết hợp file .js này 
+        vào file html thông qua thẻ script và attribute src
+     -->
+
+    <h1 onclick="
+            this.style.color = 'red';
+            this.style.backgroundColor = 'yellow'
+            " onmouseover="this.style.backgroundColor = 'green'" onmouseout="this.style.backgroundColor = 'white'">
+        Heading 1</h1>
+
+
+    <p onclick="
+            this.style.color = 'red';
+            this.style.backgroundColor = 'yellow'
+            " onmouseover="this.style.backgroundColor = 'green'" onmouseout="this.style.backgroundColor = 'white'">
+        Heading 1</p>
+
+
+    <input type="password" value="123456" onfocus="this.type = 'text'" onblur="this.type = 'password'">
+
+
+    <br>
+
+    <input type="password" id="pw">
+    <button id="btn" onclick="handlePassword()">Show Password</button>
+
+
+    <script src="index.js"></script>
+</body>
+
+</html>
