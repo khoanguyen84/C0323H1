@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>map</title>
+</head>
+
+<body>
+    <select id="job">
+        
+    </select>
+
+    <script>
+        let jobs = ["Lau nhà", "Quét nhà", "Nấu cơm", "Rửa chén", "Đón con", "Tắm cho con"];
+
+        // let numbers = [10, 20, 30, 40];
+        // let htmls = numbers.map(function(value, index){
+        //     return `<button>${index}.${value}</button>`
+        // })
+        // console.log(htmls.join(""));
+        // document.write(htmls.join(""))
+
+        let options = jobs.map(function(job, index){
+            return `<option>${job}</option>`
+        })
+        document.getElementById('job').innerHTML = options.join("");
+    </script>
+</body>
+
+</html>
