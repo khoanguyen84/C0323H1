@@ -23,7 +23,7 @@ function displayMatrix(matrix){
     }
 }
 
-function countEventNumber(matrix){
+function countEvenNumber(matrix){
     let count = 0;
     for(let i = 0; i < matrix.length; i++){
         for(let j = 0; j < matrix[i].length; j++){
@@ -35,7 +35,31 @@ function countEventNumber(matrix){
     return count;
 }
 
-let matrix = createMatrix(2, 3, 20, 90)
+function isPrime(number){
+    for(let divisor = 2; divisor < number; divisor++){
+        if(number % divisor == 0){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+function countOfPrime(matrix){
+    let count = 0;
+    for(let i = 0; i < matrix.length; i++){
+        for(let j = 0; j < matrix[i].length; j++){
+            if(isPrime(matrix[i][j]) == true){
+                count ++;
+            }
+        }
+    }
+    return count;
+}
+
+let matrix = createMatrix(20, 30, 20, 90)
 displayMatrix(matrix);
-let count = countEventNumber(matrix);
-document.write(`Number of even in matrix is: ${count}`)
+let count = countEvenNumber(matrix);
+document.write(`Number of even in matrix is: ${count} <br>`)
+let countPrime = countOfPrime(matrix);
+document.write(`Count of prime in matrix is: ${countPrime}`)
