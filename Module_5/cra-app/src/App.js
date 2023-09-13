@@ -1,6 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
 
 // Class Component -> OOP
 // Function Component -> Hooks 
@@ -14,7 +16,10 @@ class Paragraph extends React.Component{
   render(){
     return (
       // JSX
-      <p>Consequat excepteur tempor ut elit laborum est consequat excepteur sit consequat deserunt. Ex ex anim nisi qui proident sit irure. Nostrud aliquip ex laboris mollit officia. Id irure laboris qui ea enim cupidatat fugiat eu velit sunt ipsum.</p>
+      <p className='fst-italic'>
+        <i className='fa fa-times me-2 text-warning' />
+        Consequat excepteur tempor ut elit laborum est consequat excepteur sit consequat deserunt. Ex ex anim nisi qui proident sit irure. Nostrud aliquip ex laboris mollit officia. Id irure laboris qui ea enim cupidatat fugiat eu velit sunt ipsum.
+      </p>
     )
   }
 }
@@ -25,7 +30,7 @@ function Heading(){
   // JSX
   return (
     <>
-      <h1>Ut fugiat ex eu incididunt sunt occaecat adipisicing nisi fugiat eu commodo officia cupidatat.</h1>
+      <h1 className='text-danger'>Ut fugiat ex eu incididunt sunt occaecat adipisicing nisi fugiat eu commodo officia cupidatat.</h1>
       <Paragraph/>
     </>
   )
