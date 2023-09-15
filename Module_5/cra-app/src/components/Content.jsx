@@ -51,12 +51,12 @@ const Content = () => {
             <div className="row">
                 <nav className="navigation">
                     <ul className="pagination">
-                        <li id="previous" className={`${currentPage <= 1 ? 'page-item disabled' : 'page-item'} ${action == 'prev' ? 'active' : ''}`}>
+                        <li className={`${currentPage <= 1 ? 'page-item disabled' : 'page-item'} ${action == 'prev' ? 'active' : ''}`}>
                             <a role="button" className="page-link"
                                 onClick={handlePreviousPage}
                             >Previous</a>
                         </li>
-                        <li id="next" className={`${currentPage >= totalPage ? 'page-item disabled' : 'page-item'} ${action == 'next' ? 'active' : ''}`}>
+                        <li className={`${currentPage >= totalPage ? 'page-item disabled' : 'page-item'} ${action == 'next' ? 'active' : ''}`}>
                             <a role="button" className="page-link"
                                 onClick={handleNextPage}
                             >Next</a>
