@@ -8,6 +8,7 @@ import TwoWayBindingJS from './components/TwoWayBindingJS';
 import TwoWayBindingReact from './components/TwoWayBindingReact';
 import TwoWayBindingReact_2 from './components/TwoWayBindingReact_2';
 import TodoApp from './components/TodoApp';
+import Video from './components/Video';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         {/* <CountAppJS/>
         <CountAppUseState/> */}
         {/* <TwoWayBindingReact_2/> */}
-        <TodoApp/>
+        {/* <TodoApp/> */}
+        <Video/>
     </div>
   );
 }
