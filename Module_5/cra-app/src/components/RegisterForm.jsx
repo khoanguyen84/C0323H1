@@ -41,28 +41,38 @@ const RegisterForm = () => {
                 <form onSubmit={handleSubmit(handleRegister)}>
                     <div className="form-group mb-3">
                         <label className="label-form">Username</label>
-                        <input type="text" className="form-control" {...register("usename")} />
-                        <span className="text-danger">{errors?.usename?.message}</span>
+                        <input type="text"
+                            className={`${errors?.usename?.message ? 'form-control is-invalid' : 'form-control'}`} 
+                            {...register("usename")} />
+                        <span className="invalid-feedback">{errors?.usename?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <label className="label-form">Email</label>
-                        <input type="text" className="form-control" {...register('email')} />
-                        <span className="text-danger">{errors?.email?.message}</span>
+                        <input type="text"
+                            className={`${errors?.email?.message ? 'form-control is-invalid' : 'form-control'}`} 
+                            {...register('email')} />
+                        <span className="invalid-feedback">{errors?.email?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <label className="label-form">Age</label>
-                        <input type="text" className="form-control" {...register('age')} />
-                        <span className="text-danger">{errors?.age?.message}</span>
+                        <input type="text" 
+                            className={`${errors?.age?.message ? 'form-control is-invalid' : 'form-control'}`}
+                            {...register('age')} />
+                        <span className="invalid-feedback">{errors?.age?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <label className="label-form">Password</label>
-                        <input type="password" className="form-control" {...register('password')} />
-                        <span className="text-danger">{errors?.password?.message}</span>
+                        <input type="password" 
+                            className={`${errors?.password?.message ? 'form-control is-invalid' : 'form-control'}`}
+                            {...register('password')} />
+                        <span className="invalid-feedback">{errors?.password?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <label className="label-form">Confirm Password</label>
-                        <input type="password" className="form-control" {...register('confirmPassword')} />
-                        <span className="text-danger">{errors?.confirmPassword?.message}</span>
+                            <input type="password" 
+                            className={`${errors?.confirmPassword?.message ? 'form-control is-invalid' : 'form-control'}`}
+                            {...register('confirmPassword')} />
+                        <span className="invalid-feedback">{errors?.confirmPassword?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <button type="submit" className="btn btn-sm btn-danger me-3">Register</button>
