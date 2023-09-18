@@ -3,6 +3,21 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from "@hookform/resolvers/yup"
 import * as yup from "yup"
 
+
+const cityList = [
+    {
+        id: 1,
+        name: "Đà Nẵng"
+    },
+    {
+        id: 2,
+        name: "Nha Trang"
+    },
+    {
+        id: 3,
+        name: "Quảng Nam"
+    }
+]
 const registerSchema = yup.object({
     usename: yup.string()
         .required("Bạn phải nhập usename!")
@@ -22,11 +37,16 @@ const registerSchema = yup.object({
         .required()
         .positive()
         .max(40)
-        .typeError("Invalid Age")
+        .typeError("Invalid Age"),
+    city: yup.number()
+            .required()
+            .min(1)
+            .typeError('Please select city')
 })
 
 const RegisterForm = () => {
     const { register, handleSubmit, formState: { errors }, reset } = useForm({
+        mode: "onChange",
         resolver: yupResolver(registerSchema)
     })
 
@@ -69,10 +89,22 @@ const RegisterForm = () => {
                     </div>
                     <div className="form-group mb-3">
                         <label className="label-form">Confirm Password</label>
-                            <input type="password" 
+                        <input type="password" 
                             className={`${errors?.confirmPassword?.message ? 'form-control is-invalid' : 'form-control'}`}
                             {...register('confirmPassword')} />
                         <span className="invalid-feedback">{errors?.confirmPassword?.message}</span>
+                    </div>
+                    <div className="form-group mb-3">
+                        <label className="label-form">City</label>
+                        <select className={`${errors?.city?.message ? 'form-control is-invalid' : 'form-control'}`} {...register("city")}>
+                            <option value={"null"}>Please select city</option>
+                            {
+                                cityList.map((city) => (
+                                    <option key={city.id} value={city.id}>{city.name}</option>
+                                ))
+                            }
+                        </select>
+                        <span className="invalid-feedback">{errors?.city?.message}</span>
                     </div>
                     <div className="form-group mb-3">
                         <button type="submit" className="btn btn-sm btn-danger me-3">Register</button>
