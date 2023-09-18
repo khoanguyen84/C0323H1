@@ -97,7 +97,7 @@ const RegisterForm = () => {
                     <div className="form-group mb-3">
                         <label className="label-form">City</label>
                         <select className={`${errors?.city?.message ? 'form-control is-invalid' : 'form-control'}`} {...register("city")}>
-                            <option value={"null"}>Please select city</option>
+                            <option value={null}>Please select city</option>
                             {
                                 cityList.map((city) => (
                                     <option key={city.id} value={city.id}>{city.name}</option>
