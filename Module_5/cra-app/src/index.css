@@ -7,17 +7,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
-
-.form-control{
+.form-control {
   border: none;
   outline: none;
-  border:1px solid red;
+  border: 1px solid red;
   padding: 20px 5px;
   border-radius: 5px;
   box-shadow: 2px 2px 2px gray;
+}
+
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  z-index: 1000;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(240, 248, 255, .9);
 }
